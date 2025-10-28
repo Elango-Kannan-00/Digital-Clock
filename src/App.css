@@ -1,4 +1,7 @@
 body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   background-color: cadetblue;
 }
 
@@ -28,7 +31,7 @@ body {
   padding: 15px 15px;
   background-color: rgb(52, 52, 52);
   border-radius: 4px;
-  margin: 1px solid grey;
+  border: 1px solid grey; /* corrected */
   color: white;
   font-size: 20px;
   margin-left: 730px;
@@ -37,32 +40,41 @@ body {
   text-decoration: none;
 }
 
-/* @media (max-width: 768px) {
+
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
   .clock-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centers vertically */
     gap: 20px;
-    padding: 20px;
+    padding: 40px 20px;
+    min-height: 100vh; /* Full height for vertical centering */
+    box-sizing: border-box;
   }
 
   .clock-container h1 {
-    margin: 0;
-    font-size: 40px;
+    font-size: 28px;
     text-align: center;
+    margin: 0;
   }
 
   #clock {
+    font-size: 4rem;
     margin: 0;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 5rem;
-    width: 90%;
-    max-width: 400px;
+    padding: 10px 20px;
+    border-radius: 8px;
   }
 
   .button {
-    margin: 0;
     font-size: 18px;
+    margin: 0;
   }
-} */
+}
+
+
