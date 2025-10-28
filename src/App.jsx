@@ -22,10 +22,12 @@ const App = () => {
   seconds = seconds < 10 ? "0" + seconds : seconds;
 
   return (
-    <div className="body">
-      <h1 className="clock-container">
-        {hour}:{minutes}:{seconds}
+    <div className="clock-container">
+      <h1>Welcome to EK's Digital Clock App !</h1>
+      <h1 id="clock">
+        {hour}-{minutes}-{seconds}
       </h1>
+      <a href="https://github.com/Elango-Kannan-00/Digital-Clock.git" target="_blank" className="button">Source Code</a>
     </div>
   );
 };
