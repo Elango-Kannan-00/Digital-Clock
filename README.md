@@ -1,16 +1,20 @@
-# React + Vite
+# 🕒 Digital Clock App
+  - A simple yet elegant digital clock built with React. It displays the current time in HH:MM:SS format and updates every second using React hooks.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🧠 How It Works
+- The app uses useState to store the current time.
+- useEffect sets up a setInterval that updates the time every second.
+- The time is formatted to always show two digits (e.g., 09:05:03).
+- The component re-renders every second to reflect the updated time.
+```
+useEffect(() => {
+  const timer = setInterval(() => {
+    setTime(new Date());
+  }, 1000);
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  return () => clearInterval(timer);
+}, []);
+```
+- This ensures:
+  - ✅ One timer is created when the component mounts.
+  - 🧹 Timer is cleaned up when the component unmounts.
