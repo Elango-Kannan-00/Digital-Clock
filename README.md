@@ -16,5 +16,5 @@ useEffect(() => {
 }, []);
 ```
 - This ensures:
-  - ✅ One timer is created when the component mounts.
-  - 🧹 Timer is cleaned up when the component unmounts.
+  - One timer is created when the component mounts.
+  - Timer is cleaned up when the component unmounts.
